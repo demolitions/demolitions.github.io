@@ -1,0 +1,25 @@
+ul.dual {
+    width:100%;
+    list-style: none;
+    display: table;
+    margin: 0 auto;
+    padding: 0 0 20px 0;
+}
+ul.dual li {
+    display: table-cell;
+    width:30%;
+    text-align: center;
+}
+ul.dual li a {
+    min-width: 80px;
+    min-height: 30px;
+    padding: 5px;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    background: #5198DF;
+    background: linear-gradient(#77b9fb 0%, #3782cd 100%);
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 5px rgba(0,0,0,0.2);
+    width: auto;
+}
