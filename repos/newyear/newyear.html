@@ -4,24 +4,35 @@
         <meta charset="utf-8">
         <title>Circular Countdown</title>
         <link rel="stylesheet" type="text/css" href="countdown.min.css" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="countdown.min.js"></script>
         <script type="text/javascript">
-            window.onload = function () {
+            function onTimerDraw(count) {
+                if (count.days === 0 && count.hours === 4 && count.mins === 40 && count.secs === 0) {
+                    var au = document.createElement("audio");
+                    $(au).prop("autoplay", true);
+                    $(au).prop("loop", false);
+                    var sr = document.createElement("source");
+                    $(sr).attr("src", "tfcountdown.ogg");
+                    $(sr).attr("type", "audio/ogg");
+                    $(au).append(sr);
+                    $('body').append(au);
+                }
+            }
+            $(function () {
                 tempdate = new Date();
                 timer = new countdown("countdown-container");
                 timer.size = 200;
                 timer.end = (tempdate.getFullYear() + 1) + "-01-01T00:00:00";
                 timer.font = "Open Sans";
+                timer.onDraw = onTimerDraw;
                 timer.draw();
-            };
+            });
         </script>
     </head>
     <body>
         <div id="page">
             <div id="countdown-container"></div>
         </div>
-        <audio autoplay loop>
-            <source src="sample.ogg" type="audio/ogg">
-        </audio>
     </body>
 </html>
