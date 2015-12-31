@@ -1,4 +1,5 @@
-ul.dual {
+ul.dual,
+ul.triple {
     width:100%;
     list-style: none;
     display: table;
@@ -10,8 +11,13 @@ ul.dual li {
     width:30%;
     text-align: center;
 }
-ul.dual li a {
-    min-width: 80px;
+ul.triple li {
+    display: table-cell;
+    width:20%;
+    text-align: center;
+}
+ul.dual li a,
+ul.triple li a {
     min-height: 30px;
     padding: 5px;
     margin: 0;
@@ -22,4 +28,10 @@ ul.dual li a {
     border-radius: 5px;
     box-shadow: 0px 0px 2px 5px rgba(0,0,0,0.2);
     width: auto;
+} 
+ul.dual li a {
+    min-width: 80px;
+} 
+ul.triple li a {
+    min-width: 70px;
 }
